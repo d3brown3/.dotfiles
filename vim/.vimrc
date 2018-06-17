@@ -44,10 +44,22 @@ command! MakeTags !ctags -R
 call plug#begin('~/.vim/plugged')
 
 " Plugins
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
+
+" Multiple Plug commands can be written in a single line using | separators
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" R plugin
 Plug 'jalvesaq/Nvim-R'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
+
+

@@ -1,22 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 
 # Use Antigen
 # Load the oh-my-zsh's library.
-ANTIGEN_PATH=~/.dotfiles
-source $ANTIGEN_PATH/antigen/antigen.zsh
+source ~/.dotfiles/antigen.zsh
 
 antigen init $HOME/.antigenrc
 
 # configure comdump location
 export ANTIGEN_COMPDUMPFILE=/path/to/location/.zcompdump
-
-# Source additional config
-source $HOME/.bash_profile
-
-# imcompatiable with antigen plugin
-source $HOME/.pm/pm.zsh
 
 # thefuck is a command fix tool
 eval $(thefuck --alias)

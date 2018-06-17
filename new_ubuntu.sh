@@ -1,21 +1,32 @@
 #!usr/bin/bash
 # Setting up a new ubuntu machine
 
-# install git
-sudo apt-get install git
+# install required softwares
+sudo apt-get -y install git zsh vim tmux curl glances fcitx fcitx-rime thefuck tig stow ranger i3 i3status dmenu
 
-# install zsh, zsh-antigen (package manager for zsh):
-sudo apt-get install zsh zsh-antigen
+# install fzf, a command-lind fuzzy finder
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # change shell to zsh
 chsh -s /usr/bin/zsh
 
-# install autokey
-sudo apt-get install autokey-common autokey-gtk
+# antigen as zsh plugin manager
+# curl -L git.io/antigen > antigen.zsh # already have it in .dotfiles
 
-# antigen
-curl -L git.io/antigen > antigen.zsh
+# tpm as tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugs/tpm
 
-# firefox nightly
-sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
-sudo apt-get update
+# vim-plug as vim plugin manager
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# load github dotfiles
+git clone https://github.com/liangquanzhou/.dotfiles.git
+
+# install plum for fcitx as rime config manager
+cd ~/.config
+mkdir plum
+git clone --depth 1 https://github.com/rime/plum.git
+cd plum
+rime_frontend=fcitx-rime bash rime-install

@@ -10,12 +10,12 @@ antigen bundle colorize
 antigen bundle mvn
 antigen bundle vi-mode
 antigen bundle autojump
-antigen bundle osx
+# antigen bundle osx
 
 # Bundles not in oh-my-zsh
 antigen bundle djui/alias-tips
 antigen bundle s7anley/zsh-geeknote
-antigen bundle thewtex/tmux-men-cpu-load
+# antigen bundle thewtex/tmux-men-cpu-load
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
