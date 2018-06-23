@@ -2,7 +2,7 @@
 # Setting up a new ubuntu machine
 
 # install required softwares
-sudo apt-get -y install zsh vim tmux curl glances fcitx fcitx-rime fcitx-config-gtk tig stow ranger i3 i3blocks i3status dmenu cmake
+sudo apt-get -y install zsh vim tmux curl glances fcitx fcitx-rime fcitx-config-gtk tig stow ranger i3 i3blocks i3status dmenu cmake arandr dkms
 
 # install fzf, a command-lind fuzzy finder
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -27,9 +27,16 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # load github dotfiles
 # git clone https://github.com/liangquanzhou/.dotfiles.git
 
+# stow dotfiles
+cd ~/.dotfiles
+rm ~/.profile
+stow shell
+stow git
+stow vim
+
 # install plum for fcitx as rime config manager
-cd ~/.config
-mkdir plum
-git clone --depth 1 https://github.com/rime/plum.git
-cd plum
+sudo cd ~/.config
+sudo mkdir plum
+sudo git clone --depth 1 https://github.com/rime/plum.git
+sudo cd plum
 rime_frontend=fcitx-rime bash rime-install
