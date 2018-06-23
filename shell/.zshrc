@@ -10,9 +10,6 @@ antigen init $HOME/.antigenrc
 # configure comdump location
 export ANTIGEN_COMPDUMPFILE=/path/to/location/.zcompdump
 
-# thefuck is a command fix tool
-eval $(thefuck --alias)
-
 # use fzf for quick fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
